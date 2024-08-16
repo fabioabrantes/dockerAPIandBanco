@@ -1,4 +1,5 @@
-node_modules/
-.git
-.vscode
-package-lock.json
+node_modules
+npm-debug.log
+Dockerfile
+docker-compose.yml
+.dockerignore

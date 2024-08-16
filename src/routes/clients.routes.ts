@@ -6,15 +6,16 @@ import DeleteUserController from '../controllers/deleteUserConntroller';
 import UpdatedUserController from '../controllers/UpdatedUserController';
 
 // midleware
-import { verifyIfExistsAccountCPF } from "../middlewares/verifyCpf";
-import { verifyIfExistsAccountById } from "../middlewares/verifyIfExistsAccountByID";
+import AuthenticateController from '../controllers/AuthenticateController';
+import { verifyToken } from '../middlewares/verifyToken';
 
 const routesUser = Router();
 
+routesUser.post('/login', AuthenticateController.handle);
 routesUser.post('/users', RegisterUserController.handle);
 routesUser.get('/users', FindAllUsersController.handle);
-routesUser.put('/users/:id', verifyIfExistsAccountById, UpdatedUserController.handle);
+routesUser.put('/users/:id', verifyToken, UpdatedUserController.handle);
 
-routesUser.delete('/users', verifyIfExistsAccountCPF, DeleteUserController.handle);
+routesUser.delete('/users', verifyToken, DeleteUserController.handle);
 
 export { routesUser }

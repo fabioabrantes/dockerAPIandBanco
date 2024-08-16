@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Router, Request, Response } from "express";
 
 import { routesUser } from "./clients.routes";
 import { routesTransactions } from "./transactions.routes";

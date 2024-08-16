@@ -1,6 +1,4 @@
 type Client = {
-  cpf:string;
-  name:string;
   id:string;
 }
 

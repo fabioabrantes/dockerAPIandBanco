@@ -5,7 +5,7 @@ import { routes } from './routes';
 
 const api = express();
 
-console.log("oi fabio");
+console.log("oi");
 api.use(express.json());
 api.use(cors());
 api.use(routes);

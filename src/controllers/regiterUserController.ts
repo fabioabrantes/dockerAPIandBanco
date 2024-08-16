@@ -3,10 +3,10 @@ import RegisterUser from '../model/useCases/registerUser';
 
 class RegisterUserController {
   async handle(req: Request, res: Response) {
-    const { cpf, name } = req.body;
+    const { cpf, name,email, password } = req.body;
 
 
-    const result = await RegisterUser.execute({ cpf, name });
+    const result = await RegisterUser.execute({ cpf, name,email,password });
 
     if (result.status !== 400) {
       return res.status(200).json({ result });
